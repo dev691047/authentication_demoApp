@@ -17,6 +17,9 @@ export function AuthContextProvider(props) {
     // localStorage.setItem("token", token);
     //we can also set here i have set it in the auth page;
   };
+  setTimeout(() => {
+    localStorage.removeItem("token");
+  }, 50000);
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem("token");
