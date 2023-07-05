@@ -33,6 +33,7 @@ const AuthForm = () => {
         );
 
         useContx.login(reslogin.data.idToken);
+        localStorage.setItem("token", reslogin.data.idToken);
       } catch (e) {
         console.log(e);
         alert(e.response.data.error.message);
@@ -52,6 +53,7 @@ const AuthForm = () => {
         console.log(res.status);
         setSignupSuccess("signup successful");
         useContx.login(res.data.idToken);
+        localStorage.setItem("token", res.data.idToken);
       } catch (e) {
         console.log(e.response.data.error.message);
         setSignupSuccess(e.response.data.error.message);

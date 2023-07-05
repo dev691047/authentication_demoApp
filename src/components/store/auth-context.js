@@ -8,13 +8,18 @@ const AuthContext = createContext({
 });
 
 export function AuthContextProvider(props) {
-  const [token, setToken] = useState(null);
+  const initalToken = localStorage.getItem("token");
+  const [token, setToken] = useState(initalToken);
   const userIsLoggedIn = !!token;
+
   const loginHandler = (token) => {
     setToken(token);
+    // localStorage.setItem("token", token);
+    //we can also set here i have set it in the auth page;
   };
   const logoutHandler = () => {
     setToken(null);
+    localStorage.removeItem("token");
   };
 
   const contextValue = {

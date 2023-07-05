@@ -13,12 +13,6 @@ const ProfileForm = () => {
       const res = await axios.post(
         "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDcUGh5Plnw7moYpg7pC7l5Qg_J4pFcWMU",
         {
-          // body: JSON.stringify({
-
-          // }),
-          // headers: {
-          //   "Context-Type": "application/json",
-          // },
           idToken: authCtx.token,
           password: enteredNewPassword,
           returnSecureToken: true,
